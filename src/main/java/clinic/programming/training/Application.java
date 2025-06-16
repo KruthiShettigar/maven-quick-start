@@ -1,14 +1,20 @@
 package clinic.programming.training;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import org.apache.commons.lang3.StringUtils;
 public class Application {
+	public int countWords(String words){
+		String[] seperate=StringUtils.split(words);
+		return (seperate==null) ? 0 : seperate.length;
+	}
     public void greet(){
-	List<String> greet=new ArrayList<>();
-	greet.add("hello");
-	for(String greeting:greet){
-	System.out.println("greeting: "+greeting);
+		List<String> greetings=new ArrayList<>();
+		greetings.add("Hello");
+		
+		for(String greeting : greetings){
+		System.out.println("Greeting :" +greeting);
+		}
 	}
-	}
-	
     public Application() {
         System.out.println ("Inside Application");
     }
@@ -18,5 +24,7 @@ public class Application {
     	System.out.println ("Starting Application");
 	Application app = new Application();
 	app.greet();
+	int count=app.countWords("I HAVE FOUR WORDS");
+	System.out.println("word count: "+count);
     }
-}
+  }
